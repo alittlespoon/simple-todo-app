@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple To-do App</title>
+
+    <!-- Reset -->
+    <link rel="stylesheet" href="reset.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=DM+Serif+Display&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <!-- Header -->
+        <header id="main-header">
+            <h1>To-do</h1>
+            <p class="tasks-remaining">1 task remaining</p>
+        </header>
+
+        <section id="main-content">
+            <!-- Add Task -->
+            <form action="" id="todo-form">
+                <input type="text" name="task-name" placeholder="e.g. Buy groceries" autofocus>
+                <button type="submit" class="material-symbols-rounded">Add</button>
+            </form>
+
+            <button class="clear-tasks">Clear completed tasks</button>
+
+            <!-- Task List -->
+            <ul class="task-list">
+            </ul>
+        </section>
+    </div>
+
+    <!-- Script -->
+    <script src="main.js"></script>
+</body>
+
+</html>

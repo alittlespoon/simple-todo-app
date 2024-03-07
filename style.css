@@ -1,0 +1,185 @@
+:root {
+  --serif: "DM Serif Display", serif;
+  --sans-serif: "Assistant", sans-serif;
+
+  --clr-light-100: hsl(36, 27%, 89%);
+  --clr-dark-100: hsl(40, 9%, 13%);
+  --clr-dark-70: hsla(40, 9%, 13%, 70%);
+  --clr-dark-50: hsl(30, 1%, 56%);
+  --clr-primary-100: hsl(55, 14%, 46%);
+  --clr-primary-20: hsla(55, 14%, 46%, 20%);
+}
+
+/* ---- General Styles ---- */
+
+body {
+  background-color: var(--clr-light-100);
+  font-family: var(--sans-serif);
+  color: var(--clr-dark-100);
+}
+
+#container {
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
+/* -------- Header -------- */
+
+#main-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+#main-header h1 {
+  font-family: serif;
+}
+
+.tasks-remaining,
+.clear-tasks {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+/* ------ To-do Input ----- */
+
+#todo-form {
+  position: relative;
+}
+
+#todo-form input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  border: 0;
+  cursor: pointer;
+}
+
+#todo-form button {
+  position: absolute;
+  height: 100%;
+  right: 0.25rem;
+}
+
+:focus {
+  outline: 2px solid var(--clr-primary-100);
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ------ To-do List ------ */
+
+.task-list {
+  /* margin: 0.5rem 0; */
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0.25rem;
+  border-bottom: 1px solid var(--clr-primary-20);
+}
+
+.task-list li:first-of-type {
+  border-top: 1px solid var(--clr-primary-20);
+}
+
+.task-list li div {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.task-list li.complete div {
+  text-decoration: line-through;
+  color: var(--clr-dark-50);
+}
+
+.task-list li span {
+  padding: 0.25rem;
+  border-radius: 2px;
+}
+
+.task-list li span:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.task-list li span[contenteditable]:hover {
+  cursor: text;
+}
+
+/* ------- Checkbox ------- */
+
+[type="checkbox"] {
+  /* Reset Style */
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  cursor: pointer;
+
+  /* Custom Style */
+  border: 2px solid var(--clr-dark-100);
+  border-radius: 100%;
+  transition: all 200ms linear;
+
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+[type="checkbox"]:hover {
+  transform: scale(1.1);
+}
+
+[type="checkbox"]::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='18' viewBox='0 -960 960 960' width='18'%3E%3Cpath d='m395-406.218 253.826-252.826q14.956-14.957 34.326-14.457t34.327 15.457q14.956 14.957 14.956 34.327 0 19.369-14.956 34.326l-286.87 286.87q-14.957 14.956-35.109 14.956t-35.109-14.956l-117.87-117.87q-14.956-14.957-15.239-34.326-.283-19.37 14.674-34.327 14.957-14.957 34.327-14.957 19.369 0 34.326 14.957L395-406.218Z' fill='%23ebe5dc'/%3E%3C/svg%3E");
+
+  transform: scale(0);
+  transition: all 200ms ease-in-out;
+
+  display: grid;
+  place-items: center;
+}
+
+[type="checkbox"]:checked {
+  background-color: var(--clr-dark-50);
+  border: 2px solid var(--clr-dark-50);
+}
+
+[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+/* ----- To-do Actions ---- */
+
+.delete-task {
+  color: var(--clr-dark-50);
+  transition: all linear 150ms;
+}
+
+.delete-task:hover {
+  color: var(--clr-dark-100);
+}
+
+.delete-task:active {
+  scale: 0.8;
+}
+
+.clear-tasks {
+  width: 100%;
+  text-align: right;
+  margin: 0.75rem 0;
+  transition: all linear 150ms;
+}
+
+.clear-tasks:hover {
+  font-weight: 400;
+}
+
+.clear-tasks:active {
+  color: var(--clr-primary-100);
+}
