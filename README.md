@@ -1,5 +1,9 @@
 # Simple To-do App
 
+https://github.com/alittlespoon/simple-todo-app/assets/39786818/eccca48d-1cff-4a94-a6cc-269775fe1ae9
+
+A somple to-do app where you can add, edit and delete tasks
+
 [Live Site](https://alittlespoon.github.io/simple-todo-app/)
 
 ### Built with
